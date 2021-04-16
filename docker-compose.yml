@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  battleship_updater:
+    container_name: battleship_updater
+    image: battleship/updater
+    restart: unless-stopped
+    ports:
+      - 4444:4444
+    environment:
+      DB_HOST: ${DO_DB_HOST}
+      DB_PORT: ${DO_DB_PORT}
+      DB_USER: ${DO_DB_USER}
+      DB_PASSWORD: ${DO_DB_PASSWORD}
+      JWT_SECRET: ${BATTLESHIP_JWT_SECRET}
+    volumes:
+      - ../log/battleship_updater:/log
+    build:
+      context: .
+      dockerfile: Dockerfile
