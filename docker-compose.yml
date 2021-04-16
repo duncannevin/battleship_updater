@@ -6,7 +6,7 @@ services:
     image: battleship/updater
     restart: unless-stopped
     ports:
-      - 4444:4444
+      - 5555:5555
     environment:
       DB_HOST: ${DO_DB_HOST}
       DB_PORT: ${DO_DB_PORT}
@@ -16,5 +16,5 @@ services:
     volumes:
       - ../log/battleship_updater:/log
     build:
-      context: .
+      context: ~/Documents/battleship/battleship_updater
       dockerfile: Dockerfile

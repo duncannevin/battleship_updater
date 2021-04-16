@@ -1,6 +1,6 @@
 const ServerConfig = {
     host: process.env.HOST || 'localhost',
-    port: process.env.PORT || 4444
+    port: process.env.PORT || 5555
 };
 
 const JWTConfig = {
