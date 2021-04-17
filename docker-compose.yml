@@ -14,7 +14,9 @@ services:
       DB_PASSWORD: ${DO_DB_PASSWORD}
       JWT_SECRET: ${BATTLESHIP_JWT_SECRET}
     volumes:
-      - ../log/battleship_updater:/log
+      - ./log/battleship_updater:/log
     build:
       context: ~/Documents/battleship/battleship_updater
       dockerfile: Dockerfile
+    depends_on:
+      - battleship
